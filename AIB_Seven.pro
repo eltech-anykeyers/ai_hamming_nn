@@ -3,17 +3,18 @@ QT += core gui widgets
 TARGET = AIB_Seven
 TEMPLATE = app
 
-CONFIG += c++1z
-QMAKE_CXXFLAGS += -std=c++1z
-
-DEFINES += QT_DEPRECATED_WARNINGS
+CONFIG += c++14
 
 SOURCES += \
         main.cpp \
-        window.cpp
+        window.cpp \
+        grid_drawer/grid_drawer.cpp \
+        grid_drawer/marked_drawer.cpp
 
 HEADERS += \
-        window.hpp
+        window.hpp \
+        grid_drawer/grid_drawer.hpp \
+        grid_drawer/marked_drawer.hpp
 
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
