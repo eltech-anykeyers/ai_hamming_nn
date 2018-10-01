@@ -1,0 +1,3 @@
+[submodule "grid_drawer"]
+	path = grid_drawer
+	url = https://github.com/eltech-anykeyers/ai_GridDrawerWidget
