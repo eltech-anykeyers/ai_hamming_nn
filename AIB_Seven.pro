@@ -8,11 +8,13 @@ CONFIG += c++14
 SOURCES += \
         main.cpp \
         window.cpp \
+        hamming.cpp \
         grid_drawer/grid_drawer.cpp \
         grid_drawer/marked_drawer.cpp
 
 HEADERS += \
         window.hpp \
+        hamming.hpp \
         grid_drawer/grid_drawer.hpp \
         grid_drawer/marked_drawer.hpp
 
