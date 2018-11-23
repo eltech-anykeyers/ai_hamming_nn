@@ -9,6 +9,7 @@
 #include <QVBoxLayout>
 #include <QVector>
 
+#include <hamming.hpp>
 #include <grid_drawer/marked_drawer.hpp>
 
 class Window : public QMainWindow
@@ -16,26 +17,32 @@ class Window : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Window(QWidget *parent = Q_NULLPTR);
+    explicit Window(QWidget* parent = Q_NULLPTR);
     ~Window();
 
 private:
+    static const QSize imageSize;
+
     void setupUi();
+    void setupObj();
 
     QWidget* mainWidget;
     QHBoxLayout* mainLayout;
-    QVBoxLayout* leftLayout;
+    QGridLayout* leftLayout;
     QLabel* leftLayoutLabel;
     MarkedDrawer* drawer;
     QHBoxLayout* leftButtonsLayout;
     QPushButton* sampleButton;
     QPushButton* recognizeButton;
+    QLabel* resultLabel;
     QVBoxLayout* rightLayout;
     QLabel* rightLayoutLabel;
     QGridLayout* rightSamplesLayout;
     QPushButton* clearButton;
 
     QVector<MarkedDrawer*>* samples;
+
+    Hamming* ai;
 
     void redrawSamples();
 };
